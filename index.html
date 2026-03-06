@@ -1,11 +1,74 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- tailwindcss & daisyui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- favicon  -->
+    <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- style  -->
+    <link rel="stylesheet" href="./style.css">
+    <title>Login Page</title>
 </head>
 <body>
+    <section class="max-w-[520px] mx-auto my-32 bg-white grid shadow py-20 items-center">
+        <div class="logo mx-auto text-center mb-10">
+            <img class="mx-auto space-y-3 mb-10 " src="./assets/github-logo.png" alt="">
+            <h2 class="text-2xl font-semibold">GitHub Issues Tracker</h2>
+            <p class="text-gray-500">Sign in to manage your issues</p>
+        
+        </div>
+        <div class=" mx-auto">
+
+            
+                <label class="label font-medium text-black">Username</label>
+                <input id="input-name" type="text" class="input" placeholder="Enter Username" />
+                <p class="mb-4 text-primary">Default: admin</p>
+            
+                <label class="label font-medium text-black">Password</label>
+                <input id="input-password" type="password" class="input" placeholder="Password" />
+                <p class="mb-4 text-primary">Default: admin123</p>
+            
+                <button onclick="chekUser()" class="btn btn-primary mt-4 w-full">Login</button>
+            
+        </div>
+        
+
+    </section>
     
+   
+
+
+<script>
+    const chekUser =()=>{
+        const inputName=document.getElementById('input-name');
+        const inputPassword =document.getElementById('input-password');
+        const x=inputName.value;
+        inputName.value="";
+        const y= inputPassword.value;
+        inputPassword.value=""
+        if (x === "admin" && y === "admin123") {
+            alert('Login Successful');
+            window.location.href = "home.html";
+        } else {
+            alert('Login Error');
+        }
+      
+    }
+</script>
+    <script src="./script.js"></script>
 </body>
+    
 </html>
