@@ -154,7 +154,7 @@ const displySingelIssues = (issu) => {
     modalDiv.innerHTML = `
                 <h3 class="font-semibold line-clamp-1">${issu.title}</h3>
                 <div class="">
-                    <div class="badge badge-success">${issu.status}</div>
+                    <div class="badge ${issu.status =="open"?'badge-success':'bg-purple-500'} ">${issu.status}</div>
                     <div class="badge "><div aria-label="status" class="status status-sm"></div>Opened by <p class="text-gray-500">${issu.author}</p></div>
                     <div class="badge "><div aria-label="status" class="status status-sm"></div><p class="text-gray-500 text-right">${issu.createdAt}</p></div>
                 </div>
