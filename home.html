@@ -27,7 +27,7 @@
 
 <body>
     <header>
-        <div class="navbar bg-base-100 shadow-sm px-20">
+        <div class="navbar bg-base-100 shadow-sm px-12">
             <div class="flex-1">
                 <a href="./home.html" class="btn btn-ghost text-xl"><i class="fa-brands fa-github"></i>Github Issue
                     Tracker</a>
@@ -47,16 +47,20 @@
             </div>
         </div>
     </header>
-    <section id="tabe" class="w-9/12 mx-auto shadow mt-16 p-5 rounded-md">
-        <button class="btn">All</button>
-        <button class="btn">Open</button>
-        <button class="btn">Closed</button>
+
+
+
+
+    <section id="tabe" class="w-10/12 mx-auto shadow mt-16 p-5 rounded-md">
+        <button onclick="switchTab('all')" id="all-btn" class="btn btn-primary">All</button>
+        <button onclick="switchTab('open')" id="open-btn" class="btn">Open</button>
+        <button onclick="switchTab('close')" id="close-btn" class="btn">Closed</button>
     </section>
-    <section id="tabe" class="w-9/12 mx-auto shadow mt-5 p-5 flex justify-between items-center">
+    <section id="Track-and-manage" class="w-10/12 mx-auto shadow mt-5 p-5 flex justify-between items-center">
         <div class="count flex gap-3">
             <img src="./assets/Aperture.png" alt="">
             <div class="con">
-                <h2 class="text-xl font-semibold"><span>50 </span>Issues</h2>
+                <h2 class="text-xl font-semibold"><span id="total">50 </span> Issues</h2>
                 <p class="text-gray-500">Track and manage your project issues</p>
             </div>
         </div>
@@ -70,88 +74,15 @@
         </div>
 
     </section>
-    <section id="main-content " class="w-9/12 mx-auto bg-gray-100 p-5 grid grid-cols-4 gap-3">
-        <div class="cadr border-t-3 border-blue-800 p-3 bg-white rounded-md space-y-3">
-            <div class="flex justify-between items-center">
-                <img class="w-6 h-6" src="./assets/Open-Status.png" alt="">
-                <button class="btn btn-soft btn-secondary rounded-3xl">HIGH</button>
-            </div>
-            <div class="con">
-                <h3 class="font-semibold">Fix navigation menu on mobile devices</h3>
-                <p class="text-gray-500">The navigation menu doesn't collapse properly on mobile devices...</p>
-            </div>
-            <div class="badg flex gap-2">
-                <div class="badge badge-soft badge-secondary"><i class="fa-solid fa-bug"></i>BUG</div>
-                <div class="badge badge-soft badge-warning"><i class="fa-regular fa-life-ring"></i>help wanted</div>
-            </div>
-            <hr class="text-gray-500 border border-gray-500">
-            <div class="date">
-                <p class="text-gray-500">#1 by john_doe</p>
-                <p class="text-gray-500">1/15/2024</p>
-            </div>
-
-        </div>
-        <div class="cadr border-t-3 border-green-800 p-3 bg-white rounded-md space-y-3">
-            <div class="flex justify-between items-center">
-                <img class="w-6 h-6" src="./assets/Open-Status.png" alt="">
-                <button class="btn btn-soft btn-secondary rounded-3xl">HIGH</button>
-            </div>
-            <div class="con">
-                <h3 class="font-semibold">Fix navigation menu on mobile devices</h3>
-                <p class="text-gray-500">The navigation menu doesn't collapse properly on mobile devices...</p>
-            </div>
-            <div class="badg flex gap-2">
-                <div class="badge badge-soft badge-secondary"><i class="fa-solid fa-bug"></i>BUG</div>
-                <div class="badge badge-soft badge-warning"><i class="fa-regular fa-life-ring"></i>help wanted</div>
-            </div>
-            <hr class="text-gray-500 border border-gray-500">
-            <div class="date">
-                <p class="text-gray-500">#1 by john_doe</p>
-                <p class="text-gray-500">1/15/2024</p>
-            </div>
-
-        </div>
-        <div class="cadr border-t-3 border-green-800 p-3 bg-white rounded-md space-y-3">
-            <div class="flex justify-between items-center">
-                <img class="w-6 h-6" src="./assets/Open-Status.png" alt="">
-                <button class="btn btn-soft btn-secondary rounded-3xl">HIGH</button>
-            </div>
-            <div class="con">
-                <h3 class="font-semibold">Fix navigation menu on mobile devices</h3>
-                <p class="text-gray-500">The navigation menu doesn't collapse properly on mobile devices...</p>
-            </div>
-            <div class="badg flex gap-2">
-                <div class="badge badge-soft badge-success"><i class="fa-solid fa-wand-magic-sparkles"></i>Enhancement
-                </div>
-            </div>
-            <hr class="text-gray-500 border border-gray-500">
-            <div class="date">
-                <p class="text-gray-500">#1 by john_doe</p>
-                <p class="text-gray-500">1/15/2024</p>
-            </div>
-
-        </div>
-        <div class="cadr border-t-3 border-green-800 p-3 bg-white rounded-md space-y-3">
-            <div class="flex justify-between items-center">
-                <img class="w-6 h-6" src="./assets/Open-Status.png" alt="">
-                <button class="btn btn-soft btn-secondary rounded-3xl">HIGH</button>
-            </div>
-            <div class="con">
-                <h3 class="font-semibold">Fix navigation menu on mobile devices</h3>
-                <p class="text-gray-500">The navigation menu doesn't collapse properly on mobile devices...</p>
-            </div>
-            <div class="badg flex gap-2">
-                <div class="badge badge-soft badge-secondary"><i class="fa-solid fa-bug"></i>BUG</div>
-                <div class="badge badge-soft badge-warning"><i class="fa-regular fa-life-ring"></i>help wanted</div>
-            </div>
-            <hr class="text-gray-500 border border-gray-500">
-            <div class="date">
-                <p class="text-gray-500">#1 by john_doe</p>
-                <p class="text-gray-500">1/15/2024</p>
-            </div>
-
-        </div>
+    <section id="main-content" class="w-10/12 mx-auto bg-gray-100 p-5 grid grid-cols-4 gap-3">
+        
+        
+        
     </section>
+
+
+
+    <script src="./scrict.js"></script>
 </body>
 
 </html>
