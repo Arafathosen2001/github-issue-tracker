@@ -23,7 +23,9 @@ const switchTab = (tab) => {
         totalContent.classList.remove('hidden')
         closeContent.classList.add('hidden')
 
-
+        openBtn.classList.remove('btn-primary')
+        allBtn.classList.add('btn-primary')
+        closeBtn.classList.remove('btn-primary')
         
     }
     if (tab === 'open') {
@@ -36,7 +38,10 @@ const switchTab = (tab) => {
         openContent.classList.remove('hidden')
         totalContent.classList.add('hidden')
         closeContent.classList.add('hidden')
-        
+
+        openBtn.classList.add('btn-primary')
+        allBtn.classList.remove('btn-primary')
+        closeBtn.classList.remove('btn-primary')
         
     }
     if (tab === 'close') {
@@ -48,6 +53,10 @@ const switchTab = (tab) => {
         openContent.classList.add('hidden')
         totalContent.classList.add('hidden')
         closeContent.classList.remove('hidden')
+
+        openBtn.classList.remove('btn-primary')
+        allBtn.classList.remove('btn-primary')
+        closeBtn.classList.add('btn-primary')
     }
 }
 const  loadAllIissues = async() => {
