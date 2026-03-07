@@ -73,10 +73,10 @@
         <button onclick="switchTab('close')" id="close-btn" class="btn">Closed</button>
     </section>
     <section id="Track-and-manage" class="w-10/12 mx-auto shadow mt-5 p-5 flex justify-between items-center">
-        <div class="count flex gap-3">
-            <img src="./assets/Aperture.png" alt="">
+        <div class="count flex gap-3 items-center">
+            <img class="w-[40px] h-[40px]" src="./assets/Aperture.png" alt="">
             <div class="con">
-                <h2 class="text-xl font-semibold"><span id="total">50 </span> Issues</h2>
+                <h2 class="text-xl font-semibold"><span id="total" class=""> </span><span id="open" class="hidden"> </span><span id="close" class="hidden"> </span> Issues</h2>
                 <p class="text-gray-500">Track and manage your project issues</p>
             </div>
         </div>
@@ -95,6 +95,8 @@
         
         
     </section>
+    <section id="section-open" class="hidden w-10/12 mx-auto bg-gray-100 p-5 grid grid-cols-4 gap-3"></section>
+    <section id="section-close" class="hidden w-10/12 mx-auto bg-gray-100 p-5 grid grid-cols-4 gap-3"></section>
 
 
 
