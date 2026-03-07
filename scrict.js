@@ -11,6 +11,9 @@ const allBtn = document.getElementById('all-btn');
 const openBtn = document.getElementById('open-btn');
 const closeBtn = document.getElementById('close-btn');
 
+const searchId = document.getElementById('search')
+
+
 const switchTab = (tab) => {
     // console.log(tab);
     if (tab === 'all') {
@@ -88,7 +91,7 @@ const displyIssues = (data) => {
         
         const card = document.createElement('div');
         card.innerHTML = `
-            <div id="card" class="cadr cursor-pointer h-full ${issu.status == "open" ? "border-t-3 border-green-500" : "border-t-3 border-purple-500"} p-3 bg-white rounded-md space-y-3 " onclick="loadSingelIssues(${issu.id})">
+            <div id="card" class="cadr cursor-pointer h-full ${issu.status == "open" ? "border-t-3 border-green-500" : "border-t-3 border-purple-500"} p-3 bg-white rounded-md space-y-3 shadow-lg " onclick="loadSingelIssues(${issu.id})">
             <div class="flex justify-between items-center">
                 <div>
                     ${issu.status == "open" ? `<img class="w-6 h-6" src="./assets/Open-Status.png" alt="">` : `<img class="w-6 h-6" src="./assets/Closed- Status .png" alt="">`}
@@ -265,5 +268,64 @@ const closeOpenIssue = (data)=>{
     })
 }
 
+
+const searchLoad = async () => {
+    const v = searchId.value;
+    const svalue = document.getElementById('velue-display');
+    svalue.innerText =v;
+    const url = `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${v}`;
+    // console.log(url);
+    const res =await fetch(url);
+    const data =await res.json();
+    displySarchIssues(data.data);
+    
+    searchId.value = "";
+
+    const modat = document.getElementById('search_modal').showModal();
+}
+const displySarchIssues = (data) => {
+    data.forEach(issu => {
+        // const FindInterview = issu.status.find(job => job.open === "open");
+        // console.log(FindInterview);
+        const serchContainer = document.getElementById('seatch-value');
+  
+        
+        const card = document.createElement('div');
+        card.innerHTML = `
+
+            <div id="card" class="cadr cursor-pointer h-full ${issu.status == "open" ? "border-t-3 border-green-500" : "border-t-3 border-purple-500"} p-3 bg-white rounded-md space-y-3 shadow-lg " onclick="loadSingelIssues(${issu.id})">
+            <div class="flex justify-between items-center">
+                <div>
+                    ${issu.status == "open" ? `<img class="w-6 h-6" src="./assets/Open-Status.png" alt="">` : `<img class="w-6 h-6" src="./assets/Closed- Status .png" alt="">`}
+                </div>
+                <button class="btn btn-soft btn-secondary rounded-3xl">${issu.priority}</button>
+            </div>
+            <div class="con">
+                <h3 class="font-semibold line-clamp-1">${issu.title}</h3>
+                <p class="text-gray-500 line-clamp-2">${issu.description}</p>
+            </div>
+            <div class="badg flex gap-2">
+            
+                <div class="">${creatLabels(issu.labels)}</div>
+            </div>
+            <hr class="text-gray-500 border border-gray-500">
+            <div class="date flex justify-between">
+                <div>
+                    <p class="text-gray-500">#${issu.author}</p>
+                    <p class="text-gray-500">${issu.assignee}</p>
+                </div>
+                <div>
+                    <p class="text-gray-500 text-right">${issu.createdAt}</p>
+                    <p class="text-gray-500">${issu.updatedAt}</p>
+                </div>
+            </div>
+
+        </div>
+        `
+        
+
+        serchContainer.append(card);
+    });
+}
 
 
