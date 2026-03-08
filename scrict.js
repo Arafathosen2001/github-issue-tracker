@@ -130,6 +130,13 @@ const countIssues = () => {
     const totalCount = allIssusContainer.children.length;
     const openCount = sectionOpen.children.length;
     const closeCount = sectionClosed.children.length;
+    const spinner = document.getElementById('loding-spinner');
+    if (totalCount === 0) {
+        spinner.classList.remove('hidden')
+    } else {
+        spinner.classList.add('hidden')
+        
+    }
     
     totalContent.innerText = totalCount;
     
