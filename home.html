@@ -51,7 +51,7 @@
 <!-- Open the modal using ID.showModal() method -->
 <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
 <dialog id="issues_modal" class="modal modal-bottom sm:modal-middle">
-    <div  class="modal-box">
+    <div class="modal-box">
             <div id="modal-box" class="">
                 
 
@@ -85,12 +85,12 @@
 </dialog>
 
 
-    <section id="tabe" class="w-10/12 mx-auto shadow mt-16 p-5 rounded-md">
+    <section id="tabe" class="w-11/12 md:w-10/12 mx-auto shadow mt-16 p-5 rounded-md">
         <button onclick="switchTab('all')" id="all-btn" class="btn btn-primary">All</button>
         <button onclick="switchTab('open')" id="open-btn" class="btn">Open</button>
         <button onclick="switchTab('close')" id="close-btn" class="btn">Closed</button>
     </section>
-    <section id="Track-and-manage" class="w-10/12 mx-auto shadow mt-5 p-5 flex justify-between">
+    <section id="Track-and-manage" class="w-11/12 md:w-10/12 mx-auto shadow mt-5 p-5 flex-row justify-center items-center md:flex md:justify-between ">
         <div class="count flex gap-3 items-center">
             <img class="w-[40px] h-[40px]" src="./assets/Aperture.png" alt="">
             <div class="con">
@@ -98,13 +98,19 @@
                 <p class="text-gray-500">Track and manage your project issues</p>
             </div>
         </div>
-        <div class="color-count flex gap-3 items-center">
-            <div class="inline-grid *:[grid-area:1/1]">
-                <div aria-label="status" class="status status-success"></div>
-            </div> Open
-            <div class="inline-grid *:[grid-area:1/1]">
-                <div class="status status-primary "></div>
-            </div> Closed
+        <div class="color-count flex gap-12 items-center">
+            <div class="">
+                <h2><div class="status status-success animate-bounce"></div>open</h2>
+            </div>
+            <div class="">
+                <h2><div class="status status-primary animate-bounce"></div>Closed</h2>
+            </div>
+                <!-- <div aria-label="status" class="status status-success inline-block">Open</div>
+            
+                <div class="status status-primary ">Closed</div> -->
+                
+                
+             
         </div>
 
     </section>
@@ -113,13 +119,13 @@
         <h2>Loding<span class="loading loading-dots loading-xs"></span></h2>
         
     </section>
-    <section id="main-content" class="w-10/12 mx-auto bg-gray-100 p-5 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+    <section id="main-content" class="w-11/12 md:w-10/12 mx-auto bg-gray-100 p-5 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
         
         
         
     </section>
-    <section id="section-open" class="hidden w-10/12 mx-auto bg-gray-100 p-5 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3"></section>
-    <section id="section-close" class="hidden w-10/12 mx-auto bg-gray-100 p-5 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3"></section>
+    <section id="section-open" class="hidden w-11/12 md:w-10/12 mx-auto bg-gray-100 p-5 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3"></section>
+    <section id="section-close" class="hidden w-11/12 md:w-10/12 mx-auto bg-gray-100 p-5 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3"></section>
 
 
 

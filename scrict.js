@@ -76,7 +76,7 @@ const  loadAllIissues = async() => {
 loadAllIissues();
 
 const creatLabels = (labels)=>{
-    const labelHtml = labels.map(el => `<span class="bg-yellow-200 p-1 rounded-2xl">${el}</span>`);
+    const labelHtml = labels.map(el => `<span class="bg-yellow-200 p-1 rounded-xl">${el}</span>`);
     return(labelHtml.join(" "))
 }
 const allIssusContainer = document.getElementById('main-content');
@@ -113,7 +113,7 @@ const displyIssues = (data) => {
                     <p class="text-gray-500">${issu.assignee}</p>
                 </div>
                 <div>
-                    <p class="text-gray-500 text-right">${issu.createdAt}</p>
+                    <p class="text-gray-500 md:text-right">${issu.createdAt}</p>
                     <p class="text-gray-500">${issu.updatedAt}</p>
                 </div>
             </div>
